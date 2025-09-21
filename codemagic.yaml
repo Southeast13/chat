@@ -1,0 +1,15 @@
+
+workflows:
+  android-debug:
+    name: Android Debug Build
+    environment:
+      vars:
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+      android:
+        build: latest
+    scripts:
+      - name: Build Debug APK
+        script: ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/**/*.apk
+    
